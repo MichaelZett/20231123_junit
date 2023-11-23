@@ -1,0 +1,5 @@
+package fizzbuzz;
+
+class FizzBuzzGameTest {
+
+}
