@@ -83,8 +83,8 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.11.0</version>
                     <configuration>
-                        <source>21</source>
-                        <target>21</target>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -131,7 +131,6 @@
                 <configuration>
                     <activeRecipes>
                         <recipe>org.openrewrite.java.migrate.UpgradeToJava17</recipe>
-                        <recipe>de.zettsystems.UseToList</recipe>
                         <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
                     </activeRecipes>
                 </configuration>
@@ -145,11 +144,6 @@
                         <groupId>org.openrewrite.recipe</groupId>
                         <artifactId>rewrite-testing-frameworks</artifactId>
                         <version>2.1.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>de.zettsystems</groupId>
-                        <artifactId>zettsystems-recipes</artifactId>
-                        <version>0.1.0</version>
                     </dependency>
                 </dependencies>
             </plugin>

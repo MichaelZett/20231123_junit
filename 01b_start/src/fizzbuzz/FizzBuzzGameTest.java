@@ -3,6 +3,7 @@ package fizzbuzz;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FizzBuzzGameTest {
     FizzBuzzGame testee;
@@ -59,7 +60,7 @@ class FizzBuzzGameTest {
                 () -> "The result for 1 is not 1 but: %s".formatted(testee.doSingleFizzBuzz(1)));
     }
 
-    @Disabled // TODO TEMPORÄR ausschalten
+//    @Disabled // TODO TEMPORÄR ausschalten
     @Test
     void shouldReturn0For0() {
         assertEquals("0", testee.doSingleFizzBuzz(0),

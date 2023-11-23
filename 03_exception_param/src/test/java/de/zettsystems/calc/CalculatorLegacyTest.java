@@ -1,6 +1,5 @@
 package de.zettsystems.calc;
 
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -17,8 +16,8 @@ public class CalculatorLegacyTest {
         testee = new Calculator();
     }
 
-    //Expected(DoNotDivideByZero.class)
-    @Test
+    //expected(DoNotDivideByZero.class)
+    @Test()
     public void divide() {
         expectedException.expect(DoNotDivideByZero.class);
         expectedException.expectMessage("Do not divide by zero");
