@@ -1,5 +1,7 @@
 package de.zettsystems.answer;
 
+import java.time.LocalDate;
+
 public class MyService {
     private MyRepository myRepository;
 
@@ -7,7 +9,8 @@ public class MyService {
         this.myRepository = myRepository;
     }
 
-    public String getDataById(String id) {
-        return myRepository.findDataById(id);
+    public Entity getDataById(String name, LocalDate date) {
+        Entity newEntity = new Entity(name, date);
+        return myRepository.save(newEntity, "id");
     }
 }

@@ -5,12 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 public class MyComplexServiceTest {
 
-    @Mock
     private MyComplexService myComplexService;
 
     @Disabled

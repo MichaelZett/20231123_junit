@@ -1,6 +1,7 @@
 package de.zettsystems;
 
 import java.text.NumberFormat;
+import java.util.Locale;
 
 /**
  * Account is a bank account with basic services for deposit,
@@ -103,6 +104,6 @@ public class Account {
      * @return formatted account information
      */
     public String toString() {
-        return (acctNumber + "\t" + name + "\t" + fmt.format(balance));
+        return (acctNumber + " " + name + " " + fmt.format(balance));
     }
 }

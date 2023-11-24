@@ -10,12 +10,12 @@ class MyServiceTest {
 
     private MyRepository myRepository;
 
-    private MyService myService;
+    private MyService testee;
 
     @BeforeEach
     void setUp() {
         myRepository = mock(MyRepository.class);
-        myService = new MyService(myRepository);
+        testee = new MyService(myRepository);
     }
 
     @Test
@@ -24,7 +24,7 @@ class MyServiceTest {
         when(myRepository.getData()).thenReturn("Mock Data");
 
         // Rufe die Methode auf, die getestet werden soll
-        String result = myService.getProcessedData();
+        String result = testee.getProcessedData();
 
         // Überprüfe das Ergebnis
         assertThat(result).isEqualTo("Processed Mock Data");

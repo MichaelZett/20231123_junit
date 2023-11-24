@@ -26,7 +26,7 @@ class AccountTest {
 
         assertThat(testee.getAccountNumber()).isEqualTo(123L);
         assertThat(testee.getBalance()).isZero();
-        assertThat(testee).hasToString("123\tTester\t0,00 €");
+        assertThat(testee).hasToString("123 Tester 0,00 €");
     }
 
     @Order(2)

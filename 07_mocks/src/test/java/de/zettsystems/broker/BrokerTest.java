@@ -12,7 +12,7 @@ import static org.mockito.Mockito.*;
 import static org.mockito.quality.Strictness.STRICT_STUBS;
 
 @ExtendWith(MockitoExtension.class)
-@MockitoSettings(strictness = STRICT_STUBS) //default
+@MockitoSettings(strictness = STRICT_STUBS) //default, Alternative LENIENT
 class BrokerTest {
 
     @Mock
@@ -30,6 +30,19 @@ class BrokerTest {
 
     @Test
     void shouldBuyStocks() {
+        when(stockService.getPrice(any(Stock.class))).thenReturn(100.0D);
+
+        testee.buyBestStock(1_000_000);
+
+        verify(stockService).buy(stockCaptor.capture(), quantityCaptor.capture());
+
+        assertThat(quantityCaptor.getValue()).isEqualTo(10_000);
+        final Stock value = stockCaptor.getValue();
+        assertThat(value.getName()).isEqualTo("SAP");
+    }
+
+    @Test
+    void shouldBuyStocksInOrder() {
         when(stockService.getPrice(any(Stock.class))).thenReturn(100.0D);
 
         testee.buyBestStock(1_000_000);

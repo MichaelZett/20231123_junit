@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class StringHelperTest {
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/isNullOrEmpty.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/isnullorempty.csv", numLinesToSkip = 1)
     void testIsNullOrEmpty(String input, boolean expected) {
         assertEquals(expected, StringHelper.isNullOrEmpty(input));
     }

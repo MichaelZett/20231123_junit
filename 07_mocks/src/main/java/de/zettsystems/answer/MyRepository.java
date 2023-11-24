@@ -1,5 +1,5 @@
 package de.zettsystems.answer;
 
 public interface MyRepository {
-    String findDataById(String id);
+    Entity save(Entity newEntity, String id);
 }
