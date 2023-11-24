@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@TestInstance(TestInstance.Lifecycle.PER_METHOD) // default
 class FizzBuzzGameTest {
     FizzBuzzGame testee;
 

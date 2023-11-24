@@ -1,0 +1,4 @@
+string,expected
+"", ""
+"abcd", "dcba"
+"a", "a"

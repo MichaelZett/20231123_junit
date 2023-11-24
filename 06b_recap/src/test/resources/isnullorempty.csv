@@ -1,0 +1,4 @@
+string,expected
+"",true
+" ",false
+"some text",false

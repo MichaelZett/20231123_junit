@@ -1,30 +1,27 @@
 package de.zettsystems;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StringHelperTest {
 
-    @Test
-    void testIsNullOrEmpty() {
-        assertTrue(StringHelper.isNullOrEmpty(null));
-        assertTrue(StringHelper.isNullOrEmpty(""));
-        assertFalse(StringHelper.isNullOrEmpty("text"));
+    @ParameterizedTest
+    @CsvFileSource(resources = "/isNullOrEmpty.csv", numLinesToSkip = 1)
+    void testIsNullOrEmpty(String input, boolean expected) {
+        assertEquals(expected, StringHelper.isNullOrEmpty(input));
     }
 
-    @Test
-    void testReverse() {
-        assertEquals("cba", StringHelper.reverse("abc"));
-        assertNull(StringHelper.reverse(null));
-        assertEquals("", StringHelper.reverse(""));
+    @ParameterizedTest
+    @CsvFileSource(resources = "/reverse.csv", numLinesToSkip = 1)
+    void testReverse(String input, String expected) {
+        assertEquals(expected, StringHelper.reverse(input));
     }
 
-    @Test
-    void testIsPalindrome() {
-        assertTrue(StringHelper.isPalindrome("radar"));
-        assertFalse(StringHelper.isPalindrome("hello"));
-        assertFalse(StringHelper.isPalindrome(null));
-        assertTrue(StringHelper.isPalindrome(""));
+    @ParameterizedTest
+    @CsvFileSource(resources = "/palindrome.csv", numLinesToSkip = 1)
+    void testIsPalindrome(String input, boolean expected) {
+        assertEquals(expected, StringHelper.isPalindrome(input));
     }
 }
